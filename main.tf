@@ -14,10 +14,10 @@ resource "aws_iam_user" "user1" {
   name = "dev_user1"
 }
 resource "aws_iam_access_key" "user-access1" {
-  user = aws_iam_user.user1
+  user = aws_iam_user.user1.name
 }
 resource "aws_iam_user_policy_attachment" "admin_policy"{
-  user = aws_iam_user.user1
+  user = aws_iam_user.user1.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
